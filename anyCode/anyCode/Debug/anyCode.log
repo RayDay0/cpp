@@ -1,0 +1,4 @@
+﻿  anyCode.cpp
+C:\Users\DcKayn\_source\cpp\anyCode\anyCode\anyCode.cpp(5,15): warning C4101: d: неиспользованная локальная переменная
+C:\Users\DcKayn\_source\cpp\anyCode\anyCode\anyCode.cpp(13,15): warning C4101: d: неиспользованная локальная переменная
+  anyCode.vcxproj -> C:\Users\DcKayn\_source\cpp\anyCode\Debug\anyCode.exe
