@@ -1,65 +1,95 @@
 ﻿#include <iostream>
-#include <cstdlib>
-#include <time.h>
+#include <string>
 using namespace std;
 
-void FillArray(int* const arr, const int size)
+class Human
 {
-	for (int i = 0; i < size; i++)
+public:
+	Human();
+	~Human();
+	int age;
+	int weight;
+	string name;
+
+	void Print()
 	{
-		arr[i] = rand() % 10;
+		cout << "Имя:\t" << name << "\nВес:\t" << weight << "\nВозраст:\t" << age << endl;
+
 	}
+
+private:
+
+};
+class CoffeeGrinder
+{
+private:
+
+	bool CheckVoltage()
+	{
+		return true;
+	}
+
+public:
+	void Start()
+	{
+		(CheckVoltage()) ? cout << "OOOPAAA!!" : cout << "Beep Beep";
+	}
+};
+
+Human::Human()
+{
 }
 
-void ShowArray(const int* const arr, const int size)
+Human::~Human()
 {
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
 }
 
-void push_back(int*& arr, int& size,const int value)
+class Point
 {
-	int* newArray = new int[size + 1];
-	for (int i = 0; i < size; i++)
+public:
+
+	Point(int valueX, int valueY)
 	{
-		newArray[i] = arr[i];
+		x = valueX;
+		y = valueY;
 	}
-	newArray[size++] = value; 
-	delete[]arr;
-	arr = newArray;
-}
 
-void pop_back(int*& arr, int& size)
-{
-	size--;
-	int* newArray = new int[size];
-	for (int i = 0; i < size; i++)
+	int GetY()
 	{
-		newArray[i] = arr[i];
+		return y;
 	}
-		delete[] arr;
-		arr = newArray;
-}
 
-int main()
-{
-	srand(time(NULL));
-	int size = 5;
-	int* arr = new int[size];
+	void SetY(int valueY) {
+		y = valueY;
+	}
 
-	FillArray(arr, size);
-	ShowArray(arr, size);
+	int GetX()
+	{
+		return x;
+	}
+	
+	void SetX(int valueX)
+	{
+		x = valueX;
+	}
+	
+	void Print()
+	{
+		cout << "x = " << x << "\t y = " << y << endl << endl;
+	}
+private:
+	int x;
+	int y;
+};
 
-	push_back(arr, size, 11);
-	ShowArray(arr, size);
 
-	pop_back(arr, size);
-	ShowArray(arr, size);
+int main() {
+	Point a(5, 44);
+	a.Print();
 
-	delete[]arr;
+
+
+	return 0;
 }
 
 
